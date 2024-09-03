@@ -1,6 +1,6 @@
 import MenuIcon from "./MenuIcon";
 import { useState } from "react";
-import PrimaryButton from "./PrimaryButton";
+// import PrimaryButton from "./PrimaryButton";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +17,7 @@ const Header = () => {
           <li>Work</li>
           <li>Frameworks</li>
           <li>Services</li>
-          <li>
-            <PrimaryButton title="Contact" />
-          </li>
+          <li>Contact</li>
         </ul>
       </nav>
       <MenuIcon handleToggle={handleToggle} isOpen={isOpen} />

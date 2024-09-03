@@ -15,7 +15,7 @@ const PrimaryButton = ({ title }) => {
             border-radius: 30px;
             transition: all 0.4s ease;
             outline: none;
-            position: relative;
+            position: relative;s
             overflow: hidden;
           }
           .boton-elegante::after {
