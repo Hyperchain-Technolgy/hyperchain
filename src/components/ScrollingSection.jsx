@@ -12,14 +12,14 @@ const technologies = [
 
 const ScrollingSection = () => {
   return (
-    <div className="mt-10 flex bg-black overflow-hidden">
+    <div className="my-16 lg:my-20 flex bg-black overflow-hidden">
       <ul className="flex animate-infinite-scroll gap-20 bg-black py-4 text-white">
         {technologies
           .concat(technologies, technologies)
           .map((technology, index) => (
             <li
               key={index}
-              className="flex flex-col items-center border border-white px-6 py-3 rounded-lg"
+              className="flex flex-col items-center border border-white px-8 py-5 rounded-lg gap-2"
             >
               <img
                 src={technology.icon}
