@@ -5,7 +5,7 @@ import hyperchain_logo from "/hyperchain_logo.svg";
 
 const KnowUs = () => {
   return (
-    <section className="container mx-auto px-4">
+    <section className="container mx-auto px-4 py-10">
       <div className="flex flex-col-reverse items-start md:justify-between md:flex-row">
         <div className="flex flex-col gap-4 md:w-2/3">
           <SectionTitle

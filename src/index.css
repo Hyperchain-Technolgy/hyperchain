@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 html {
+  scroll-behavior: smooth;
+}
+
+body {
   font-family: Sora, Inter, ui-sans-serif, system-ui, sans-serif;
   background-color: black;
   color: white;

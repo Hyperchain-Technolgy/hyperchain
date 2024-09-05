@@ -14,8 +14,8 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4">
-      <div className="flex flex-col lg:flex-row justify-between lg:items-center my-16">
+    <section className="container mx-auto px-4 py-10">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center">
         <div>
           <div className="flex flex-col gap-4">
             <SectionTitle
