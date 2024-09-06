@@ -9,7 +9,7 @@ const DropdownMenu = ({ items, type }) => {
           <li key={index}>
             <Link
               to={item.href}
-              className="flex items-center space-x-2 hover:text-white text-gray-300 cursor-pointer hover:bg-neutral-900/50 py-2 px-6 rounded-md"
+              className="flex items-center space-x-2 hover:text-white text-gray-300 cursor-pointer border border-transparent hover:border-gray-400 hover:bg-neutral-800/50 py-2 px-6 rounded-md"
             >
               {type === "frameworks" && item.icon && <span>{item.icon}</span>}
               <span>{item.name}</span>
