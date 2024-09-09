@@ -11,6 +11,7 @@ const KnowUs = () => {
           <SectionTitle
             title="Reliable Blockchain Development Company"
             subtitle="Know Us"
+            link="/"
           />
           <p className="font-['Inter'] font-bold text-xl">
             “Building Tomorrow&apos;s World with Blockchain Today”
