@@ -56,7 +56,7 @@ const OurServices = () => {
           <div className="flex flex-col gap-4">
             <SectionTitle
               title="Tailored to Your Needs"
-              subtitle="Our Services"
+              subtitle="Our Services" 
               link="/services"
             />
             <SectionParagraph
