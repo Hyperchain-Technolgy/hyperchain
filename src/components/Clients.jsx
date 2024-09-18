@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SectionTitle from "./SectionHeader/SectionTitle";
 import SectionParagraph from "./SectionHeader/SectionParagraph";
 import PropTypes from "prop-types";
+import Indicators from "./Indicators";
 
 const testimonials = [
   {
@@ -52,29 +53,6 @@ TestimonialCard.propTypes = {
   }).isRequired,
 };
 
-const Indicators = ({ activeIndex, setActiveIndex, totalCount }) => (
-  <div className="flex justify-center mt-10 space-x-3">
-    {[...Array(totalCount)].map((_, index) => (
-      <button
-        key={index}
-        onClick={() => setActiveIndex(index)}
-        className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-          index === activeIndex
-            ? "bg-white scale-125"
-            : "bg-white/30 hover:bg-white/50"
-        }`}
-        aria-label={`Go to testimonial ${index + 1}`}
-      />
-    ))}
-  </div>
-);
-
-Indicators.propTypes = {
-  activeIndex: PropTypes.number.isRequired,
-  setActiveIndex: PropTypes.func.isRequired,
-  totalCount: PropTypes.number.isRequired,
-};
-
 const Clients = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -92,7 +70,7 @@ const Clients = () => {
         <SectionParagraph paragraph="Don't just take our word for it. Read what our clients have to say about their experience working with us." />
       </div>
 
-      <div className="mt-20">
+      <div className="lg:mt-20">
         <div className="relative">
           {/* Large devices: 3 reviews */}
           <div className="hidden lg:grid grid-cols-3 gap-8">
