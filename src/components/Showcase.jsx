@@ -19,8 +19,8 @@ const Showcase = () => {
 
   const TechItem = ({ icon, name }) => (
     <div className="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full">
-      <img src={icon} alt={name} className="w-4 h-4 lg:w-5 lg:h-5" />
-      <span className="text-xs lg:text-sm text-white">{name}</span>
+      <img src={icon} alt={name} className="w-4 h-4" />
+      <span className="text-xs text-white">{name}</span>
     </div>
   );
 
@@ -32,12 +32,12 @@ const Showcase = () => {
   const NavigationButton = ({ direction, onClick }) => (
     <button
       onClick={onClick}
-      className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+      className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
     >
       {direction === "previous" ? (
-        <ChevronLeftIcon className="text-white w-6 h-6" />
+        <ChevronLeftIcon className="text-white w-4 h-4" />
       ) : (
-        <ChevronRightIcon className="text-white w-6 h-6" />
+        <ChevronRightIcon className="text-white w-4 h-4" />
       )}
     </button>
   );
@@ -48,7 +48,7 @@ const Showcase = () => {
   };
 
   const ShowcaseHeader = () => (
-    <div className="flex flex-col gap-4 mb-16">
+    <div className="flex flex-col gap-4 mb-8">
       <SectionTitle
         title="A Showcase of Our Success"
         subtitle="Work"
@@ -70,10 +70,10 @@ const Showcase = () => {
       </div>
 
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2">
+        <h2 className="text-xl font-bold text-white mb-2">
           {currentItem.name}
         </h2>
-        <p className="text-lg font-bold leading-6 text-white/80 mb-4 tracking-tighter">
+        <p className="text-base font-bold leading-6 text-white/80 mb-4 tracking-tighter">
           {currentItem.subtitle}
         </p>
         <p className="text-sm text-white/70">{currentItem.description}</p>
@@ -102,36 +102,36 @@ const Showcase = () => {
   );
 
   const DesktopLayout = () => (
-    <div className="hidden lg:grid grid-cols-12 gap-12 relative">
-      <div className="col-span-7">
-        <div className="relative h-[700px] overflow-hidden rounded-2xl shadow-2xl">
+    <div className="hidden lg:grid grid-cols-12 gap-8 relative">
+      <div className="col-span-5">
+        <div className="relative h-[400px] overflow-hidden rounded-xl shadow-lg">
           <img
             src={currentItem.bg}
             alt={currentItem.name}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         </div>
       </div>
-      <div className="col-span-5 flex flex-col justify-between py-12">
+      <div className="col-span-7 flex flex-col justify-between py-6">
         <div>
-          <h2 className="text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl font-bold text-white mb-2 leading-tight">
             {currentItem.name}
           </h2>
-          <p className="text-3xl text-white/90 mb-8 font-light">
+          <p className="text-xl font-bold text-white/60 mb-4 tracking-tight leading-6">
             {currentItem.subtitle}
           </p>
-          <p className="text-xl text-white/80 mb-12 leading-relaxed">
+          <p className="text-base text-white/80 mb-6 leading-relaxed">
             {currentItem.description}
           </p>
-          <div className="flex flex-wrap gap-4 mb-12">
+          <div className="flex flex-wrap gap-3 mb-8">
             {currentItem.tech.map((item, index) => (
               <TechItem key={index} {...item} />
             ))}
           </div>
         </div>
         <div className="flex justify-between items-center">
-          <div className="flex gap-6">
+          <div className="flex gap-4">
             <NavigationButton
               direction="previous"
               onClick={() => navigateShowcase(-1)}
@@ -148,7 +148,7 @@ const Showcase = () => {
   );
 
   return (
-    <section className="container mx-auto px-6 py-24">
+    <section className="container mx-auto px-6 py-16">
       <ShowcaseHeader />
       <MobileLayout />
       <DesktopLayout />
