@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import KnowUs from "../components/KnowUs";
 import OurServices from "../components/OurServices";
 import BlockchainConsultation from "../components/BlockchainConsultation";
+import Showcase from "../components/Showcase";
 function Home() {
   return (
     <>
@@ -11,6 +12,7 @@ function Home() {
       <KnowUs />
       <OurServices />
       <BlockchainConsultation />
+      <Showcase />
     </>
   );
 }
