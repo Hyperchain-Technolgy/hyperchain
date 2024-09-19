@@ -3,8 +3,8 @@ import ScrollingSection from "./ScrollingSection";
 
 const Hero = () => {
   return (
-    <main className="container mx-auto py-10">
-      <section className="mt-5 mb:mt-10 flex flex-col items-center justify-around lg:flex-row">
+    <section className="container mx-auto py-10">
+      <div className="mt-5 mb:mt-10 flex flex-col items-center justify-around lg:flex-row">
         <div className="text-center flex flex-col justify-center lg:text-left">
           <h1 className="text-2xl leading-8 lg:leading-10 md:text-4xl font-bold text-nowrap mb-3">
             <div>Everywhere, Everytime.</div>
@@ -20,9 +20,9 @@ const Hero = () => {
           alt="Object"
           className="mt-10 w-[80%] max-w-80"
         />
-      </section>
+      </div>
       <ScrollingSection />
-    </main>
+    </section>
   );
 };
 

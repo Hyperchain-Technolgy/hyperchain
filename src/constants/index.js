@@ -3,6 +3,60 @@ import ethereum from "../assets/ethereum.svg";
 const image =
   "https://images.unsplash.com/photo-1583413230888-c7b03057be03?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
+export const frameworks = [
+  { name: "Solana", icon: "☀️", href: "/frameworks/solana" },
+  { name: "Ethereum", icon: "💎", href: "/frameworks/ethereum" },
+  { name: "Polkadot", icon: "🔴", href: "/frameworks/polkadot" },
+  { name: "Near Protocol", icon: "🌙", href: "/frameworks/near-protocol" },
+  { name: "Aptos", icon: "🔵", href: "/frameworks/aptos" },
+  { name: "SUI", icon: "🔷", href: "/frameworks/sui" },
+  {
+    name: "Binance Smart Chain",
+    icon: "🟨",
+    href: "/frameworks/binance-smart-chain",
+  },
+  { name: "Polygon", icon: "🟣", href: "/frameworks/polygon" },
+  { name: "Avalanche", icon: "🔺", href: "/frameworks/avalanche" },
+  { name: "Arbitrum", icon: "🔷", href: "/frameworks/arbitrum" },
+  { name: "Cardano", icon: "🔵", href: "/frameworks/cardano" },
+  { name: "Hyperledger", icon: "🔗", href: "/frameworks/hyperledger" },
+  { name: "R3 Corda", icon: "🔷", href: "/frameworks/r3-corda" },
+  {
+    name: "Hedera Hashgraph",
+    icon: "♦️",
+    href: "/frameworks/hedera-hashgraph",
+  },
+  { name: "Stellar", icon: "🌟", href: "/frameworks/stellar" },
+];
+
+export const services = [
+  { name: "Oracle Development", href: "/services/oracle-development" },
+  {
+    name: "VRF Protocol Development",
+    href: "/services/vrf-protocol-development",
+  },
+  { name: "ZK-Rollup Development", href: "/services/zk-rollup-development" },
+  {
+    name: "Optimistic Rollups Development",
+    href: "/services/optimistic-rollups-development",
+  },
+  { name: "Launchpad Development", href: "/services/launchpad-development" },
+  { name: "Wallet Development", href: "/services/wallet-development" },
+  { name: "NFT Development", href: "/services/nft-development" },
+  { name: "DAO Development", href: "/services/dao-development" },
+  { name: "Dapps Development", href: "/services/dapps-development" },
+  {
+    name: "Modern Whitepaper Solutions",
+    href: "/services/modern-whitepaper-solutions",
+  },
+  { name: "Concensus Forking", href: "/services/concensus-forking" },
+  { name: "Smart Contract Audit", href: "/services/smart-contract-audit" },
+  { name: "New DLT Solutions", href: "/services/new-dlt-solutions" },
+  { name: "STO Solutions", href: "/services/sto-solutions" },
+  { name: "Tokenomics", href: "/services/tokenomics" },
+  { name: "Exchange Development", href: "/services/exchange-development" },
+];
+
 export const showcase = [
   {
     name: "B&O",
@@ -88,5 +142,26 @@ export const showcase = [
       { name: "Node.JS", icon: ethereum },
       { name: "Angular", icon: ethereum },
     ],
+  },
+];
+
+export const testimonials = [
+  {
+    text: "Hyperchain Technologies delivered an exceptional blockchain solution that transformed our business operations.",
+    author: "John Doe",
+    position: "CEO, Company A",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+  },
+  {
+    text: "The team's expertise in blockchain development is unparalleled. They exceeded our expectations.",
+    author: "Jane Smith",
+    position: "CTO, Company B",
+    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+  },
+  {
+    text: "Working with Hyperchain was a game-changer for our project. Their innovative approach set us apart in the market.",
+    author: "Mike Johnson",
+    position: "Founder, Startup C",
+    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
   },
 ];

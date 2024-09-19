@@ -20,7 +20,7 @@ const SectionTitle = ({ subtitle, title, link }) => {
 SectionTitle.propTypes = {
   subtitle: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  link: PropTypes.string,
 };
 
 export default SectionTitle;

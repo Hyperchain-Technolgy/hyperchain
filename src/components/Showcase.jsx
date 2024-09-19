@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import LinkButton from "./LinkButton";
-import { showcase } from "../constants/Showcase";
+import { showcase } from "../constants";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import SectionTitle from "./SectionHeader/SectionTitle";
 import SectionParagraph from "./SectionHeader/SectionParagraph";

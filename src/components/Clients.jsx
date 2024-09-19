@@ -3,27 +3,7 @@ import SectionTitle from "./SectionHeader/SectionTitle";
 import SectionParagraph from "./SectionHeader/SectionParagraph";
 import PropTypes from "prop-types";
 import Indicators from "./Indicators";
-
-const testimonials = [
-  {
-    text: "Hyperchain Technologies delivered an exceptional blockchain solution that transformed our business operations.",
-    author: "John Doe",
-    position: "CEO, Company A",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-  },
-  {
-    text: "The team's expertise in blockchain development is unparalleled. They exceeded our expectations.",
-    author: "Jane Smith",
-    position: "CTO, Company B",
-    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
-  },
-  {
-    text: "Working with Hyperchain was a game-changer for our project. Their innovative approach set us apart in the market.",
-    author: "Mike Johnson",
-    position: "Founder, Startup C",
-    avatar: "https://randomuser.me/api/portraits/men/3.jpg",
-  },
-];
+import { testimonials } from "../constants";
 
 const TestimonialCard = ({ testimonial }) => (
   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-lg p-8 flex flex-col h-full shadow-lg transition-all duration-300">

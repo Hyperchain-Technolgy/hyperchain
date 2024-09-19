@@ -1,7 +1,7 @@
 import MenuIcon from "./MenuIcon";
 import { useState } from "react";
 import DropdownMenu from "./DropdownMenu";
-import { frameworks, services } from "../constants/menuItems";
+import { frameworks, services } from "../constants";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
