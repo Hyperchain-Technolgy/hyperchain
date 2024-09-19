@@ -5,6 +5,8 @@ import OurServices from "../components/OurServices";
 import BlockchainConsultation from "../components/BlockchainConsultation";
 import Showcase from "../components/Showcase";
 import Clients from "../components/Clients";
+import Contact from "../components/Contact";
+
 function Home() {
   return (
     <>
@@ -15,6 +17,7 @@ function Home() {
       <BlockchainConsultation />
       <Showcase />
       <Clients />
+      <Contact />
     </>
   );
 }
