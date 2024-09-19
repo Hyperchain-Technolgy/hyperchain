@@ -26,7 +26,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }) => (
-  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-lg p-8 flex flex-col h-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-lg p-8 flex flex-col h-full shadow-lg transition-all duration-300">
     <p className="text-white/90 italic mb-6 flex-grow text-lg leading-relaxed">
       {testimonial.text}
     </p>
@@ -64,8 +64,8 @@ const Clients = () => {
   }, []);
 
   return (
-    <section className="container mx-auto px-4 py-24">
-      <div className="flex flex-col items-center gap-4 mb-8">
+    <section className="container mx-auto px-6 py-24">
+      <div className="flex flex-col lg:items-center gap-2 lg:gap-4 mb-8">
         <SectionTitle title="Words from Our Clients" subtitle="clients" />
         <SectionParagraph paragraph="Don't just take our word for it. Read what our clients have to say about their experience working with us." />
       </div>
