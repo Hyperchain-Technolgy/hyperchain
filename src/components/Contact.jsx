@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Select from "react-select";
 import PropTypes from "prop-types";
 import contactImage from "../assets/consult/consult.jpeg";
 import SectionTitle from "./SectionHeader/SectionTitle";
 import SectionParagraph from "./SectionHeader/SectionParagraph";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { fetchCountryCodes } from "../service/api-client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,24 +21,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
-  useEffect(() => {
-    fetchCountryCodes();
-  }, []);
-
-  const fetchCountryCodes = async () => {
+  const fetchCountryCodesAndSet = async () => {
     try {
-      const response = await axios.get(
-        "https://restcountries.com/v3.1/all?fields=name,idd"
-      );
-      const codes = response.data
-        .filter((country) => country.idd.root)
-        .map((country) => ({
-          value: `${country.idd.root}${country.idd.suffixes?.[0] || ""}`,
-          label: `${country.name.common} (${country.idd.root}${
-            country.idd.suffixes?.[0] || ""
-          })`,
-        }))
-        .sort((a, b) => a.label.localeCompare(b.label));
+      const codes = await fetchCountryCodes();
       setCountryCodes(codes);
 
       const indiaCode = codes.find((code) => code.value === "+91");
@@ -52,6 +37,10 @@ const Contact = () => {
       console.error("Error fetching country codes:", error);
     }
   };
+
+  useEffect(() => {
+    fetchCountryCodesAndSet();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
