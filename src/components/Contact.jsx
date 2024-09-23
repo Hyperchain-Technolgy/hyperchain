@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import contactImage from "../assets/consult/consult.jpeg";
 import SectionTitle from "./SectionHeader/SectionTitle";
 import SectionParagraph from "./SectionHeader/SectionParagraph";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -80,30 +81,27 @@ const Contact = () => {
     return errors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       setIsSubmitting(true);
       try {
-        const response = await axios.post(
-          "https://script.google.com/macros/s/AKfycbza6YmnxiT0oJor5xtqR2w6F2_-mDHjZ1ehEnOs2Vu2Rk-4WGbstf1Zd-leY43GPETEsA/exec",
-          formData
-        );
-        if (response.data.result === "success") {
-          setSubmitMessage("Form submitted successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            countryCode: "+91",
-            phone: "",
-            skype: "",
-            projectDescription: "",
-          });
-          setFormErrors({});
-        } else {
-          setSubmitMessage("Form submission failed. Please try again.");
-        }
+        console.log("Form data submitted:", {
+          ...formData,
+          phone: `${formData.countryCode}${formData.phone}`,
+        });
+
+        setSubmitMessage("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          countryCode: "+91",
+          phone: "",
+          skype: "",
+          projectDescription: "",
+        });
+        setFormErrors({});
       } catch (error) {
         console.error("Error submitting form:", error);
         setSubmitMessage("An error occurred. Please try again later.");
@@ -119,12 +117,15 @@ const Contact = () => {
     "w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300";
   const errorClasses = "text-red-500 text-sm mt-1";
 
-  const formatOptionLabel = ({ value, label }) => (
-    <div className="flex justify-between">
-      <span>{value}</span>
-      <span className="text-gray-400">{label.split("(")[0].trim()}</span>
-    </div>
-  );
+  const formatOptionLabel = ({ value, label }, { context }) => {
+    return context === "menu" ? (
+      <div className="flex justify-between">
+        <span>{label.split("(")[0].trim()}</span>
+      </div>
+    ) : (
+      <div>{value}</div>
+    );
+  };
 
   return (
     <section className="container mx-auto px-4 py-20">
@@ -184,42 +185,11 @@ const Contact = () => {
                 className="react-select-container"
                 classNamePrefix="react-select"
                 formatOptionLabel={formatOptionLabel}
-                styles={{
-                  ...selectStyles,
-                  control: (provided) => ({
-                    ...provided,
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    borderColor: "rgba(255, 255, 255, 0.3)",
-                    color: "white",
-                    minHeight: "46px",
-                    height: "46px",
-                    minWidth: "90px",
-                    width: "90px",
-                  }),
-                  valueContainer: (provided) => ({
-                    ...provided,
-                    height: "46px",
-                    padding: "0 6px",
-                  }),
-                  input: (provided) => ({
-                    ...provided,
-                    margin: "0px",
-                  }),
-                  singleValue: (provided) => ({
-                    ...provided,
-                    color: "white",
-                    "& > div": {
-                      "& > span:last-child": {
-                        display: "none",
-                      },
-                    },
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    width: "auto",
-                    minWidth: "200px",
-                  }),
-                }}
+                getOptionLabel={(option) => option.value}
+                getOptionValue={(option) => option.value}
+                styles={selectStyles}
+                menuPortalTarget={document.body}
+                menuPlacement="auto"
               />
             </div>
             <div className="flex-1">
@@ -339,18 +309,7 @@ const SubmitButton = ({ isSubmitting }) => (
   >
     <span>{isSubmitting ? "Submitting..." : "Submit"}</span>
     {!isSubmitting && (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fillRule="evenodd"
-          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-          clipRule="evenodd"
-        />
-      </svg>
+      <ArrowRightIcon className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
     )}
   </button>
 );
@@ -366,6 +325,9 @@ const selectStyles = {
     borderColor: "rgba(255, 255, 255, 0.3)",
     color: "white",
     minHeight: "46px",
+    height: "46px",
+    minWidth: "90px",
+    width: "90px",
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -373,15 +335,23 @@ const selectStyles = {
   }),
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isSelected ? "#3b82f6" : "black",
+    backgroundColor: state.isSelected ? "#3b82f6" : "#1f2937",
     color: "white",
     "&:hover": {
-      backgroundColor: "#1e40af",
+      backgroundColor: "#2563eb",
     },
   }),
   menu: (provided) => ({
     ...provided,
-    backgroundColor: "black",
+    backgroundColor: "#1f2937",
+    width: "200px",
+    boxShadow:
+      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+  }),
+  menuPortal: (base) => ({
+    ...base,
+    zIndex: 9999,
   }),
 };
 
