@@ -12,6 +12,9 @@ export default {
       animation: {
         "infinite-scroll": "infinite-scroll 30s linear infinite",
       },
+      fontFamily: {
+        vt323: ["VT323", "monospace"],
+      },
     },
   },
   plugins: [],
