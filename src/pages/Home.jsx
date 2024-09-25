@@ -7,6 +7,7 @@ import Showcase from "../components/Showcase";
 import Clients from "../components/Clients";
 import Contact from "../components/Contact";
 import ScrollingFooter from "../components/ScrollingFooter";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       <Clients />
       <Contact />
       <ScrollingFooter />
+      <Footer />
     </>
   );
 }
