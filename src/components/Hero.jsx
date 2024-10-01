@@ -1,4 +1,4 @@
-import metalicPurple from "../assets/metalic_purple.png";
+import metalicPurple from "../assets/hero/metalic_purple.png";
 import ScrollingSection from "./ScrollingSection";
 
 const Hero = () => {
