@@ -24,15 +24,6 @@ const TestimonialCard = ({ testimonial }) => (
   </div>
 );
 
-TestimonialCard.propTypes = {
-  testimonial: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    position: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
 const Clients = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -81,3 +72,12 @@ const Clients = () => {
 };
 
 export default Clients;
+
+TestimonialCard.propTypes = {
+  testimonial: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+  }).isRequired,
+};

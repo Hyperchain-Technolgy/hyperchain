@@ -14,11 +14,6 @@ const TechItem = ({ icon, name }) => (
   </div>
 );
 
-TechItem.propTypes = {
-  icon: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-};
-
 const NavigationButton = ({ direction, onClick }) => (
   <button
     onClick={onClick}
@@ -32,11 +27,6 @@ const NavigationButton = ({ direction, onClick }) => (
     )}
   </button>
 );
-
-NavigationButton.propTypes = {
-  direction: PropTypes.oneOf(["previous", "next"]).isRequired,
-  onClick: PropTypes.func.isRequired,
-};
 
 const ShowcaseHeader = () => (
   <div className="flex flex-col gap-4 mb-8">
@@ -86,11 +76,6 @@ const MobileLayout = ({ currentItem, navigateShowcase }) => (
   </div>
 );
 
-MobileLayout.propTypes = {
-  currentItem: PropTypes.object.isRequired,
-  navigateShowcase: PropTypes.func.isRequired,
-};
-
 const DesktopLayout = ({ currentItem }) => (
   <div className="hidden lg:grid grid-cols-12 gap-8 relative">
     <div className="col-span-5">
@@ -126,10 +111,6 @@ const DesktopLayout = ({ currentItem }) => (
     </div>
   </div>
 );
-
-DesktopLayout.propTypes = {
-  currentItem: PropTypes.object.isRequired,
-};
 
 const Showcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -181,3 +162,22 @@ const Showcase = () => {
 };
 
 export default Showcase;
+
+TechItem.propTypes = {
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+DesktopLayout.propTypes = {
+  currentItem: PropTypes.object.isRequired,
+};
+
+MobileLayout.propTypes = {
+  currentItem: PropTypes.object.isRequired,
+  navigateShowcase: PropTypes.func.isRequired,
+};
+
+NavigationButton.propTypes = {
+  direction: PropTypes.oneOf(["previous", "next"]).isRequired,
+  onClick: PropTypes.func.isRequired,
+};

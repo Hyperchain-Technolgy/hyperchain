@@ -14,13 +14,13 @@ const socialLinks = [
 ];
 
 const navigationLinks = [
-  "Work",
-  "Services",
-  "Frameworks",
-  "Use Cases",
-  "About",
-  "Careers",
-  "Contact",
+  { name: "Work", link: "/work" },
+  { name: "Services", link: "/services" },
+  { name: "Frameworks", link: "/frameworks" },
+  { name: "Use Cases", link: "/use-cases" },
+  { name: "About", link: "/about" },
+  { name: "Careers", link: "/careers" },
+  { name: "Contact", link: "/contact" },
 ];
 
 const SocialLinks = () => (
@@ -42,14 +42,14 @@ const NavigationLinks = () => (
   <ul className="space-y-3 w-full">
     {navigationLinks.map((link) => (
       <li
-        key={link}
+        key={link.name}
         className="border-b border-gray-700 hover:border-white transition-colors duration-300"
       >
         <a
-          href="#"
+          href={link.link}
           className="text-white transition-all duration-300 flex items-center justify-between w-full group py-2 hover:pl-2"
         >
-          {link}
+          {link.name}
           <ArrowRightIcon className="h-5 w-5 transform group-hover:rotate-[-45deg] transition-transform duration-300" />
         </a>
       </li>
